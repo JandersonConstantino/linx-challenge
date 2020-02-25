@@ -3,9 +3,10 @@ import { primaryLight } from 'core/colors';
 
 const Wrapper = styled.div`
   background-color: ${primaryLight};
-  width: 100vw;
-  height: 100vh;
+  width: 98vw;
+  height: 96vh;
   padding: 15px;
+  overflow: hidden;
 `;
 
 export default Wrapper;

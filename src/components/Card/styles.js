@@ -5,7 +5,7 @@ export const Container = styled.div`
   float: left;
   background-color: ${secondary};
   border-radius: 16px;
-  min-height: 87vh;
+  min-height: 95vh;
   min-width: 27vw;
   display: block;
 `;
