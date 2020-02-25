@@ -24,7 +24,7 @@ const Filter = () => {
     e.preventDefault();
 
     if (text.trim().length > 0)
-      dispatch({ type: SagaTypes.FETCH_WEATHER, payload: text });
+      dispatch({ type: SagaTypes.FETCH_WEATHER, payload: text, t });
   };
 
   return (
@@ -38,8 +38,9 @@ const Filter = () => {
             value={text}
             onChange={e => setText(e.target.value)}
             placeholder={t('SEARCH_BY_CITY')}
+            data-testid='search-input'
           />
-          <SearchButton>
+          <SearchButton data-testid='search-button'>
             <Icon
               alt={t('SEARCH_ICON')}
               src={require('assets/search.png')}

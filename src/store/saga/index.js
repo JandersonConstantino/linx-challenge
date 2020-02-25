@@ -1,12 +1,13 @@
 import axios from 'axios';
 import { put, takeLatest, all } from 'redux-saga/effects';
+import { toast } from 'react-toastify';
 
 import parseWeatherData from 'utils/parsers/weatherData';
 import { Types } from 'store/saga/types';
 import { Types as LoaderTypes } from 'store/ducks/loader';
 import { Types as WeatherTypes } from 'store/ducks/weather';
 
-function* fetchWeather({ payload }) {
+function* fetchWeather({ payload, t }) {
   const params = { q: payload };
 
   yield put({ type: LoaderTypes.SET_LOADING, payload: true });
@@ -23,7 +24,7 @@ function* fetchWeather({ payload }) {
       put({ type: WeatherTypes.SET_CURRENT_DAY, payload: weather[0] })
     ]);
   } catch (e) {
-    console.log('e', e);
+    toast.error(t('CITY_NOT_FOUND'));
   } finally {
     yield put({ type: LoaderTypes.SET_LOADING, payload: false });
   }

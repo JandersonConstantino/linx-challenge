@@ -23,6 +23,7 @@ export default {
     HUMIDITY: 'Humidade',
     SUNRISE: 'Nascer do sol',
     SUNSET: 'Pôr do sol',
-    COORDINATES: 'Coordenadas'
+    COORDINATES: 'Coordenadas',
+    CITY_NOT_FOUND: 'Cidade não encontrada.'
   }
 };
